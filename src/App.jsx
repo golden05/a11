@@ -1,9 +1,9 @@
 import * as React from "react";
 
-const Search = (props) => {
+const Search = props => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     props.onSearch(event);
   };
 
@@ -19,7 +19,7 @@ const Search = (props) => {
   );
 };
 
-const Item = (props) => {
+const Item = props => {
   <li>
     <span>
       <a href={props.item.url}>{props.item.title}</a>
@@ -30,9 +30,9 @@ const Item = (props) => {
   </li>;
 };
 
-const List = (props) => {
+const List = props => {
   <ul>
-    {props.list.map((item) => (
+    {props.list.map(item => (
       <Item key={item.objectID} item={item} />
     ))}
   </ul>;
@@ -46,7 +46,7 @@ const App = () => {
       author: "Jordan Walke",
       num_comments: 3,
       points: 5,
-      objectID: 0,
+      objectID: 0
     },
     {
       title: "Redux",
@@ -54,11 +54,11 @@ const App = () => {
       author: "Dan Abramov, Andrew Clark",
       num_comments: 4,
       points: 3,
-      objectID: 1,
-    },
+      objectID: 1
+    }
   ];
 
-  const handleSearch = (event) => {
+  const handleSearch = event => {
     console.log(event.target.value);
   };
 
